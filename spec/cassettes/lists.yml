@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 12:38:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d69f3711f9a1c6f484267a8346f2cfff91549975131; expires=Wed, 12-Feb-20
+        12:38:51 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - D550AC04E11F41FEA07CF3583F8631C9
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7f1d5bff31c1ea-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"81b2ecf6-c655-4ca4-9f92-8d0166472b0e","expires_at":"2019-02-12T12:58:52.250Z"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 12:38:52 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=81b2ecf6-c655-4ca4-9f92-8d0166472b0e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 12:38:52 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '156'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d16754824f3f1636f1d92564b794641d51549975132; expires=Wed, 12-Feb-20
+        12:38:52 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 45B93036B00348B9847C4882702A2935
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7f1d60ee7dc1ea-IAD
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"BSB","src":"http://todoable.teachable.tech/api/lists/d9003246-082a-44b7-8e2a-f6e02357de98","id":"d9003246-082a-44b7-8e2a-f6e02357de98"}]}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 12:38:52 GMT
+recorded_with: VCR 4.0.0

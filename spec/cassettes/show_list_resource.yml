@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 13:13:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9c2b07369ac0f2c75f1048c8d473fcd51549977188; expires=Wed, 12-Feb-20
+        13:13:08 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 239A76463F6D437DB5E00ADE98130F69
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7f4f93ab5771df-ORD
+    body:
+      encoding: UTF-8
+      string: '{"token":"dc67e64c-4bbc-42dc-a7ce-66f5bb0722bd","expires_at":"2019-02-12T13:33:09.044Z"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 13:13:09 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"PRS"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=dc67e64c-4bbc-42dc-a7ce-66f5bb0722bd
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 13:13:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '144'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3370deedeefe1577b256fa30092912241549977189; expires=Wed, 12-Feb-20
+        13:13:09 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/1d0b5585-a801-4d3c-82d6-d152c38a26a2
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - AB08D051971F40648E5B42DF619FE4CA
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7f4f97fa5c95b6-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"PRS","src":"http://todoable.teachable.tech/api/lists/1d0b5585-a801-4d3c-82d6-d152c38a26a2","id":"1d0b5585-a801-4d3c-82d6-d152c38a26a2"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 13:13:09 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists/1d0b5585-a801-4d3c-82d6-d152c38a26a2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=dc67e64c-4bbc-42dc-a7ce-66f5bb0722bd
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 13:13:09 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '25'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dae815c2d3f6cbb9995511a5fa17a85891549977189; expires=Wed, 12-Feb-20
+        13:13:09 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - B62AFA5709434D39A2A252ED740D4002
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7f4f987c9623de-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"PRS","items":[]}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 13:13:09 GMT
+recorded_with: VCR 4.0.0
