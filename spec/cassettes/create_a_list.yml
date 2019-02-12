@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 14:57:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=ddfb5bc338962a6a0855fc592d4ce507a1549983456; expires=Wed, 12-Feb-20
+        14:57:36 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 80F97222710C4012B21CC546DAB0817F
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7fe89a3e1a714f-ORD
+    body:
+      encoding: UTF-8
+      string: '{"token":"233d6acb-3ba6-4460-9d77-3d76b80fc153","expires_at":"2019-02-12T15:17:37.346Z"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 14:57:37 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Arturia"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=233d6acb-3ba6-4460-9d77-3d76b80fc153
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 14:57:37 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '148'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc2b86fb0f6fabae8a0c6ffb287b59f641549983457; expires=Wed, 12-Feb-20
+        14:57:37 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/2ce856fc-1249-40d9-b3a3-0b18271a9f83
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 74EFF8EED74245F2885CE169CD289B39
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a7fe8a1089471b5-ORD
+    body:
+      encoding: UTF-8
+      string: '{"name":"Arturia","src":"http://todoable.teachable.tech/api/lists/2ce856fc-1249-40d9-b3a3-0b18271a9f83","id":"2ce856fc-1249-40d9-b3a3-0b18271a9f83"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 14:57:37 GMT
+recorded_with: VCR 4.0.0

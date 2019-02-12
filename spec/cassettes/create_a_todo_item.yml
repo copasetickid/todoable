@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:21:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d7853ab7e13564ca213fb1f0466e9b6a21549984910; expires=Wed, 12-Feb-20
+        15:21:50 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 7EC1E805D3F4410AAE035BDEB3AD61F4
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a800c184b35c572-ORD
+    body:
+      encoding: UTF-8
+      string: '{"token":"9f5a0c2b-9c0f-4b49-85e1-213333ae1883","expires_at":"2019-02-12T15:41:51.248Z"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:21:51 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Fender Telecaster"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=9f5a0c2b-9c0f-4b49-85e1-213333ae1883
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:21:51 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '158'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc3c0285d3b6cc58f614a87e08d4bd2e91549984911; expires=Wed, 12-Feb-20
+        15:21:51 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 0BF978224C964A64909535791B530282
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a800c209b25c52e-ORD
+    body:
+      encoding: UTF-8
+      string: '{"name":"Fender Telecaster","src":"http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d","id":"c2e67915-133d-4725-97ed-4c1c6f9b2a0d"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:21:51 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d/items
+    body:
+      encoding: UTF-8
+      string: '{"item":{"name":"Buy a new pickup"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=9f5a0c2b-9c0f-4b49-85e1-213333ae1883
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:21:52 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '219'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d49c68e661798b66d2f207a299997231c1549984912; expires=Wed, 12-Feb-20
+        15:21:52 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d/items/7d813d03-5d3d-497b-b3a7-c5718901d997
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1764509CB6FB491EA3361FD3DFFC1522
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a800c21bfd5c18b-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"Buy a new pickup","finished_at":null,"src":"http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d/items/7d813d03-5d3d-497b-b3a7-c5718901d997","id":"7d813d03-5d3d-497b-b3a7-c5718901d997"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:21:52 GMT
+recorded_with: VCR 4.0.0

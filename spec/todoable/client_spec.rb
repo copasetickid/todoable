@@ -59,4 +59,52 @@ RSpec.describe Todoable::Client do
       end
     end
   end
+
+  context "POST requests" do
+    before do
+      @client = Todoable::Client.new
+    end
+
+    describe "creates a new list" do 
+      it "and it returns a 201 when successful" do
+        VCR.use_cassette("create_a_list") do
+          @client.authenticate_user
+          params = {
+            "list": {
+              "name": "Arturia"
+            }
+          }
+          lists_path = "/lists"
+          response = @client.post(lists_path, params)
+          expect(response.code).to eq 201
+        end
+      end
+    end
+
+    describe "creates a new item  in a list" do
+      it "and it returns a 201 when successful" do
+        VCR.use_cassette("create_a_todo_item") do
+          @client.authenticate_user
+          lists_path = "/lists"
+
+          params = {
+            "list": {
+              "name": "Fender Telecaster"
+            }
+          }
+          list = @client.post(lists_path, params)
+
+          item_params = {
+            "item": {
+              "name": "Buy a new pickup"
+            }
+          }
+          list_resource_path = "#{lists_path}/#{list['id']}/items"
+
+          response = @client.post(list_resource_path, item_params)
+          expect(response.code).to eq 201
+        end
+      end
+    end
+  end
 end
