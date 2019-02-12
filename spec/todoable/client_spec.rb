@@ -143,4 +143,60 @@ RSpec.describe Todoable::Client do
       end
     end
   end
+
+  context "DELETE requests" do
+    before do
+      @client = Todoable::Client.new
+      @lists_path = "/lists"
+    end
+
+    describe "deletes the list and all items in it" do
+      it "and returns 204 when successful" do 
+        VCR.use_cassette("delete_list") do
+          @client.authenticate_user
+
+          list_params = {
+            "list": {
+              "name": "Akai MPK Mini"
+            }
+          }
+
+          list = @client.post(@lists_path, list_params)
+
+          list_resource_path = "#{@lists_path}/#{list['id']}"
+
+          response = @client.delete(list_resource_path)
+          expect(response.code).to eq 204
+        end
+      end
+    end
+
+    describe "deletes an item within in a list" do
+      it "and returns 204 when successful" do
+        VCR.use_cassette("delete_an_item") do
+          @client.authenticate_user
+
+          list_params = {
+            "list": { "name": "Roland 88 "}
+          }
+
+          list = @client.post(@lists_path, list_params)
+          item_params = {
+            "item": {
+              "name": "Buy a new cover"
+            }
+          }
+          list_resource_path = "#{@lists_path}/#{list['id']}/items"
+
+          item = @client.post(list_resource_path, item_params)
+
+          item_resource_path = "#{@lists_path}/#{list['id']}/items/#{item['id']}"
+
+          response = @client.delete(item_resource_path)
+          expect(response.code).to eq 204
+
+        end
+      end
+    end
+  end
 end
