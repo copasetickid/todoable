@@ -81,7 +81,7 @@ RSpec.describe Todoable::Client do
       end
     end
 
-    describe "creates a new item  in a list" do
+    describe "creates a new item in a list" do
       it "and it returns a 201 when successful" do
         VCR.use_cassette("create_a_todo_item") do
           @client.authenticate_user
@@ -103,6 +103,42 @@ RSpec.describe Todoable::Client do
 
           response = @client.post(list_resource_path, item_params)
           expect(response.code).to eq 201
+        end
+      end
+    end
+  end
+
+  context "PATCH requests" do
+    before do
+      @client = Todoable::Client.new
+    end
+
+    describe "updates the name of a list" do
+      it "and it returns a 200" do
+        VCR.use_cassette("update_list_name") do
+          @client.authenticate_user
+          lists_path = "/lists"
+
+          list_params = {
+            "list": {
+              "name": "Artuia Keylab"
+            }
+          }
+
+          list = @client.post(lists_path, list_params)
+
+          new_name_params = {
+            "list": {
+              "name": "Artuia Keylab 49"
+            }
+          }
+
+          list_resource_path = "#{lists_path}/#{list['id']}"
+
+          response = @client.patch(list_resource_path, new_name_params)
+
+          expect(response.code).to eq 200
+          expect(response.body).to eq "Artuia Keylab 49 updated"
         end
       end
     end

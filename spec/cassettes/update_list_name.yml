@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:46:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dfec3bbe79a34a0db1e4c0ccb80e40b7c1549986417; expires=Wed, 12-Feb-20
+        15:46:57 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 44296C38AB7E43D89AD96C477CB2BD15
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8030e66e2d9f3c-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"700e4f29-0fae-4e38-b7aa-e7e394cc1808","expires_at":"2019-02-12T16:06:58.541Z"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:46:58 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Artuia Keylab"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=700e4f29-0fae-4e38-b7aa-e7e394cc1808
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:46:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '154'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df0f2da1d2caa99da3a39c9085bace9611549986418; expires=Wed, 12-Feb-20
+        15:46:58 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/daff8ee2-ccd6-4304-9542-09bba5ddf543
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - AF71565128C245BE9C8210B70A662A2B
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8030ec5e9023de-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"Artuia Keylab","src":"http://todoable.teachable.tech/api/lists/daff8ee2-ccd6-4304-9542-09bba5ddf543","id":"daff8ee2-ccd6-4304-9542-09bba5ddf543"}'
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:46:59 GMT
+- request:
+    method: patch
+    uri: http://todoable.teachable.tech/api/lists/daff8ee2-ccd6-4304-9542-09bba5ddf543
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"Artuia Keylab 49"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=700e4f29-0fae-4e38-b7aa-e7e394cc1808
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Feb 2019 15:46:58 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '24'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d8db5198ac5b216a6ad89b467fdfdffa01549986418; expires=Wed, 12-Feb-20
+        15:46:58 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 0AA9A9CCEF0F441DBC513468A50DA896
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8030ed4b8e23cc-IAD
+    body:
+      encoding: UTF-8
+      string: Artuia Keylab 49 updated
+    http_version: 
+  recorded_at: Tue, 12 Feb 2019 15:46:59 GMT
+recorded_with: VCR 4.0.0
