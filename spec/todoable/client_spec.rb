@@ -23,14 +23,15 @@ RSpec.describe Todoable::Client do
   context "GET Request" do 
     before do 
       @client = Todoable::Client.new
+      @lists_path = "/lists"
     end
 
     describe "retrieves all the lists" do
       it "and returns an array of lists" do
         VCR.use_cassette("lists") do
           @client.authenticate_user
-          lists_path = "/lists"
-          respoonse = @client.get(lists_path)
+          
+          respoonse = @client.get(@lists_path)
 
           expect(respoonse["lists"].class).to eq Array
         end
@@ -46,11 +47,10 @@ RSpec.describe Todoable::Client do
               "name": "PRS"
             }
           }
-          lists_path = "/lists"
 
-          new_list = @client.post(lists_path, params)
+          new_list = @client.post(@lists_path, params)
 
-          list_resource_path = "#{lists_path}/#{new_list['id']}"
+          list_resource_path = "#{@lists_path}/#{new_list['id']}"
 
           respoonse = @client.get(list_resource_path)
           expect(respoonse["name"]).to eq new_list["name"]
@@ -63,6 +63,7 @@ RSpec.describe Todoable::Client do
   context "POST requests" do
     before do
       @client = Todoable::Client.new
+      @lists_path = "/lists"
     end
 
     describe "creates a new list" do 
@@ -74,8 +75,8 @@ RSpec.describe Todoable::Client do
               "name": "Arturia"
             }
           }
-          lists_path = "/lists"
-          response = @client.post(lists_path, params)
+
+          response = @client.post(@lists_path, params)
           expect(response.code).to eq 201
         end
       end
@@ -85,21 +86,20 @@ RSpec.describe Todoable::Client do
       it "and it returns a 201 when successful" do
         VCR.use_cassette("create_a_todo_item") do
           @client.authenticate_user
-          lists_path = "/lists"
 
           params = {
             "list": {
               "name": "Fender Telecaster"
             }
           }
-          list = @client.post(lists_path, params)
+          list = @client.post(@lists_path, params)
 
           item_params = {
             "item": {
               "name": "Buy a new pickup"
             }
           }
-          list_resource_path = "#{lists_path}/#{list['id']}/items"
+          list_resource_path = "#{@lists_path}/#{list['id']}/items"
 
           response = @client.post(list_resource_path, item_params)
           expect(response.code).to eq 201
