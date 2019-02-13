@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Feb 2019 04:22:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d5225d54972df943f95658ee235f3eb9f1550031749; expires=Thu, 13-Feb-20
+        04:22:29 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - A39A45ABB0A142648168BD38E66DF278
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a84839f821e95b0-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"78afb038-a5b2-459b-82f0-36ee0f6317b7","expires_at":"2019-02-13T04:42:29.841Z"}'
+    http_version: 
+  recorded_at: Wed, 13 Feb 2019 04:22:29 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"PRS Custom 24"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=78afb038-a5b2-459b-82f0-36ee0f6317b7
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 13 Feb 2019 04:22:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '154'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df81d18cc73151b1f9f6a061087c48fd11550031750; expires=Thu, 13-Feb-20
+        04:22:30 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 9F74890C5B14424487EF5EB6F574E142
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8483ab803423f6-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"PRS Custom 24","src":"http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88","id":"dac051a2-cf1f-4f11-a3ac-47c584ae9d88"}'
+    http_version: 
+  recorded_at: Wed, 13 Feb 2019 04:22:31 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88/items
+    body:
+      encoding: UTF-8
+      string: '{"item":{"name":"Customize fret board"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=78afb038-a5b2-459b-82f0-36ee0f6317b7
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 13 Feb 2019 04:22:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '223'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4175f51e2dc8be6f9b517f58e6549c2f1550031751; expires=Thu, 13-Feb-20
+        04:22:31 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88/items/b58ed10e-db64-4886-a101-c72afcc2b870
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - D902E956B2D94C63B17CF433767B2D74
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8483ac9f3a71eb-ORD
+    body:
+      encoding: UTF-8
+      string: '{"name":"Customize fret board","finished_at":null,"src":"http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88/items/b58ed10e-db64-4886-a101-c72afcc2b870","id":"b58ed10e-db64-4886-a101-c72afcc2b870"}'
+    http_version: 
+  recorded_at: Wed, 13 Feb 2019 04:22:31 GMT
+- request:
+    method: put
+    uri: http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88/items/b58ed10e-db64-4886-a101-c72afcc2b870/finish
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=78afb038-a5b2-459b-82f0-36ee0f6317b7
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Feb 2019 04:22:31 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '29'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d462df15f832aff1697ec3764e05fea7f1550031751; expires=Thu, 13-Feb-20
+        04:22:31 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - AA7D47AF3F544538BAE628D4F739944B
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4a8483af0d6b9f3c-IAD
+    body:
+      encoding: UTF-8
+      string: Customize fret board finished
+    http_version: 
+  recorded_at: Wed, 13 Feb 2019 04:22:31 GMT
+recorded_with: VCR 4.0.0

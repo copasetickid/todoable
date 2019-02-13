@@ -114,7 +114,7 @@ RSpec.describe Todoable::Client do
     end
 
     describe "updates the name of a list" do
-      it "and it returns a 200" do
+      it "and it returns a 200 when successful" do
         VCR.use_cassette("update_list_name") do
           @client.authenticate_user
           lists_path = "/lists"
@@ -194,7 +194,43 @@ RSpec.describe Todoable::Client do
 
           response = @client.delete(item_resource_path)
           expect(response.code).to eq 204
+        end
+      end
+    end
+  end
 
+  context "PUT requests" do
+    before do
+      @client = Todoable::Client.new
+    end
+
+    describe "marks a todo item as finished" do
+      it "and returns 200 when successful" do
+        VCR.use_cassette("finish_todo_item") do
+          @client.authenticate_user
+          lists_path = "/lists"
+
+          params = {
+            "list": {
+              "name": "PRS Custom 24"
+            }
+          }
+          list = @client.post(lists_path, params)
+
+          item_params = {
+            "item": {
+              "name": "Customize fret board"
+            }
+          }
+          list_items_resource_path = "#{lists_path}/#{list['id']}/items"
+
+          list_item = @client.post(list_items_resource_path, item_params)
+
+          finish_item_path = "#{list_items_resource_path}/#{list_item['id']}/finish"
+
+          response = @client.put(finish_item_path)
+
+          expect(response.code).to eq 200
         end
       end
     end
