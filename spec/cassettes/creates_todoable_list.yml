@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:04:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3d1707e25a4546302391e720dde115461550523895; expires=Tue, 18-Feb-20
+        21:04:55 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - D3FC32FC84AD447E8E839EB1BB11F6C5
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab372e74ee323e4-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"fba4cebe-d448-4178-83c1-ba327cee364b","expires_at":"2019-02-18T21:24:55.742Z"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:04:55 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: UTF-8
+      string: '{"list":{"name":"music"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=fba4cebe-d448-4178-83c1-ba327cee364b
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:04:55 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '146'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d58b8dd2ba9d930f69a5791e6cfbd09151550523895; expires=Tue, 18-Feb-20
+        21:04:55 GMT; path=/; domain=.teachable.tech; HttpOnly
+      Location:
+      - http://todoable.teachable.tech/api/lists/b5701f75-6b1b-4033-a160-10f22909793c
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 2EA395BE5DE74DE9A00D39C3B8A4DFE0
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab372eccf4223de-IAD
+    body:
+      encoding: UTF-8
+      string: '{"name":"music","src":"http://todoable.teachable.tech/api/lists/b5701f75-6b1b-4033-a160-10f22909793c","id":"b5701f75-6b1b-4033-a160-10f22909793c"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:04:55 GMT
+recorded_with: VCR 4.0.0

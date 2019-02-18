@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:01:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d86fdb3a06bc7b7411607fd9b0e1856c41550523685; expires=Tue, 18-Feb-20
+        21:01:25 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - BB138292BDAC440092DE7F9424A80B7E
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab36dcb3b2f9f3c-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"ff405b82-c5a8-42be-ab7b-0443d960a465","expires_at":"2019-02-18T21:21:26.246Z"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:01:26 GMT
+- request:
+    method: get
+    uri: http://todoable.teachable.tech/api/lists
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Token token=ff405b82-c5a8-42be-ab7b-0443d960a465
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:01:26 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2288'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=ddd08acf5409b123141aad35a90b4d2a21550523686; expires=Tue, 18-Feb-20
+        21:01:26 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - C4BCA07A5ED5407191C13D3C2748EC6F
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab36dd0287a23cc-IAD
+    body:
+      encoding: UTF-8
+      string: '{"lists":[{"name":"BSB","src":"http://todoable.teachable.tech/api/lists/d9003246-082a-44b7-8e2a-f6e02357de98","id":"d9003246-082a-44b7-8e2a-f6e02357de98"},{"name":"Sneakers","src":"http://todoable.teachable.tech/api/lists/02f439b6-845c-4c0f-ba9e-a55d782f210a","id":"02f439b6-845c-4c0f-ba9e-a55d782f210a"},{"name":"Jordans","src":"http://todoable.teachable.tech/api/lists/f7848a59-9e7d-4ceb-b57e-5afe77a29608","id":"f7848a59-9e7d-4ceb-b57e-5afe77a29608"},{"name":"Epiphone","src":"http://todoable.teachable.tech/api/lists/58bed95b-6497-4346-90a8-94093c9709ba","id":"58bed95b-6497-4346-90a8-94093c9709ba"},{"name":"Gibson","src":"http://todoable.teachable.tech/api/lists/68fe6b28-aa9b-4d97-9891-1597a631758c","id":"68fe6b28-aa9b-4d97-9891-1597a631758c"},{"name":"PRS","src":"http://todoable.teachable.tech/api/lists/1d0b5585-a801-4d3c-82d6-d152c38a26a2","id":"1d0b5585-a801-4d3c-82d6-d152c38a26a2"},{"name":"Arturia","src":"http://todoable.teachable.tech/api/lists/2ce856fc-1249-40d9-b3a3-0b18271a9f83","id":"2ce856fc-1249-40d9-b3a3-0b18271a9f83"},{"name":"Les
+        Paul","src":"http://todoable.teachable.tech/api/lists/e14fbfcd-832e-4c28-8761-9baab0b3ae8b","id":"e14fbfcd-832e-4c28-8761-9baab0b3ae8b"},{"name":"Fender
+        Telecaster","src":"http://todoable.teachable.tech/api/lists/c2e67915-133d-4725-97ed-4c1c6f9b2a0d","id":"c2e67915-133d-4725-97ed-4c1c6f9b2a0d"},{"name":"Fender
+        Modern Telecaster","src":"http://todoable.teachable.tech/api/lists/66af13e4-32e0-4653-9294-3ea204f66655","id":"66af13e4-32e0-4653-9294-3ea204f66655"},{"name":"Sample
+        1","src":"http://todoable.teachable.tech/api/lists/44908b4c-208f-44c1-9ba5-eed64f4a1286","id":"44908b4c-208f-44c1-9ba5-eed64f4a1286"},{"name":"Sameple
+        3","src":"http://todoable.teachable.tech/api/lists/0095fb73-9d28-4c60-a5c2-b0cef30b52a9","id":"0095fb73-9d28-4c60-a5c2-b0cef30b52a9"},{"name":"Artuia
+        Keylab 49","src":"http://todoable.teachable.tech/api/lists/daff8ee2-ccd6-4304-9542-09bba5ddf543","id":"daff8ee2-ccd6-4304-9542-09bba5ddf543"},{"name":"Roland
+        88 ","src":"http://todoable.teachable.tech/api/lists/3fa4f470-e581-4b44-a7af-1d8ba454c2c2","id":"3fa4f470-e581-4b44-a7af-1d8ba454c2c2"},{"name":"PRS
+        Custom 24","src":"http://todoable.teachable.tech/api/lists/dac051a2-cf1f-4f11-a3ac-47c584ae9d88","id":"dac051a2-cf1f-4f11-a3ac-47c584ae9d88"}]}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:01:27 GMT
+recorded_with: VCR 4.0.0
