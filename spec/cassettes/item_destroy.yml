@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:59:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbdcfd0c2180fb63afd28f793451b16761550527195; expires=Tue, 18-Feb-20
+        21:59:55 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 442829FE018E4084A7F033B92363726C
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab3c37d1fc495c2-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"1640ca3a-5647-476b-b2a6-08684b2938ea","expires_at":"2019-02-18T22:19:56.245Z"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:59:56 GMT
+- request:
+    method: post
+    uri: http://todoable.teachable.tech/api/authenticate
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Basic <ENCODED AUTH HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Feb 2019 21:59:56 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3c1cf9b3bd1afd817834a9a627e758b31550527196; expires=Tue, 18-Feb-20
+        21:59:56 GMT; path=/; domain=.teachable.tech; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 368E48C238BF47FABBA104708E140D82
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4ab3c3810bc495b6-IAD
+    body:
+      encoding: UTF-8
+      string: '{"token":"0308b4fe-99e5-4e77-9237-ea656d5478ed","expires_at":"2019-02-18T22:19:56.953Z"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2019 21:59:57 GMT
+recorded_with: VCR 4.0.0
