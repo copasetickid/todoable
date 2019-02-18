@@ -3,12 +3,8 @@ require "spec_helper"
 RSpec.describe Todoable::List do
   context "class methods" do
     describe ".all" do
-      it "returns Todoable lists" do 
-        VCR.use_cassette("return_lists") do 
-          result = [
-            "lists": {"name": "Netflix shows", "id": 500 }
-          ]
-
+      it "returns Todoable lists" do
+        VCR.use_cassette("return_lists") do
           expect(Todoable::List.all.first).to be_a Todoable::List
         end
       end

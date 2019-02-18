@@ -1,5 +1,3 @@
-require "todoable/lists"
-
 module Todoable
   # Client for the Todoable API
   class Client
